@@ -1,14 +1,6 @@
-BIN = files.exe
-OBJ = main.o
-CC = gcc
-CCFLAGS = -Wall -Wextra -pedantic
+cmake_minimum_required(VERSION 3.10)
+project(semestralka C)
 
-$(BIN): $(OBJ)
-	gcc $(OBJ) -o $(BIN) $(CCFLAGS)
+set(CMAKE_C_STANDARD 11)
 
-main.o: main.c ext.h
-	$(CC) -c main.c $(CCFLAGS)
-
-clean:
-	del *.o
-	del *.exe 
+add_executable(example main.c ext.h)
